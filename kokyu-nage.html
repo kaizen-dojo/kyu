@@ -135,20 +135,22 @@
         </script>
 
         <script>  
-            let extra = "https://www.youtube.com/embed/qwBO21eVVso?si=Y676CRGZa_zvvD_6&amp;start=14";
+            const lugar = document.querySelector("aside");
+            const extra = ["https://www.youtube.com/embed/qwBO21eVVso?si=Y676CRGZa_zvvD_6&amp;start=14","https://www.youtube.com/embed/POvsOnN6yM4?si=gRfbwase9LRUYH8T&amp;start=203","https://www.youtube.com/embed/mLMR30IkUjk?si=8eDft4jo-YTYmhrt&amp;start=171"];
 
-            if (extra !== ""){
-                document.querySelector("aside").innerHTML = `<div class="row pt-4">
+
+            extra.forEach((x)=>{
+                lugar.innerHTML += `<div class="row pt-4">
                 <div class="col-md-4">
                     <h3 class="ms-3 mt-2">Extra <span class="d-none d-md-inline">&rarr;</span></h3>
                 </div>
                 <div class="col-md-8">
                     <div class="card shadow-sm p-3 border-0 mb-5">
-                        <div class="ratio ratio-16x9"><iframe src="${extra}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                        <div class="ratio ratio-16x9"><iframe src="${x}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                     </div>
                 </div>
             </div>`
-            }
+            });
         </script>
 
     </body>
