@@ -27,39 +27,48 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle lh-1" href="#" data-bs-toggle="dropdown" aria-expanded="false"><small style="font-variant: small-caps;">katame waza</small><br />inmovilizaciones</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="ikkyo.html">Ikkyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="nikyo.html">Nikyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="sankyo.html">Sankyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="yonkyo.html">Yonkyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="gokyo.html">Gokyo</a></li>
-                            </ul>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">PRIMER PILAR</option>
+                            <option value="index.html" selected>Ikkyo</option>
+                            <option value="nikyo.html">Nikyo</option>
+                            <option value="sankyo.html">Sankyo</option>
+                            <option value="yonkyo.html">Yonkyo</option>
+                            <option value="gokyo.html">Gokyo</option>
+                        </select>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle lh-1" href="#" data-bs-toggle="dropdown" aria-expanded="false"><small>nage waza</small><br />proyecciones</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="irimi-nage.html">Irimi nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kaiten-nage.html">Kaiten nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kokyu-nage.html">Kokyu nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kote-gaeshi.html">Kote gaeshi</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="shiho-nage.html">Shiho nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="tenchi-nage.html">Tenchi nage</a></li>
-                            </ul>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">SEGUNDO PILAR</option>
+                            <option value="irimi-nage.html">Irimi Nage</option>
+                            <option value="kaiten-nage.html">Kaiten Nage</option>
+                            <option value="kote-gaeshi.html">Kote Gaeshi</option>
+                            <option value="shijo-nage.html">Shiho Nage</option>
+                            <option value="tenchi-nage.html">Tenchi Nage</option>
+                        </select>
+                        </li>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">TERCER PILAR</option>
+                            <option value="kokyu-nage.html">Kokyu Nage</option>
+                        </select>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <main class="container mt-5 mb-2">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="my-5 display-5">Sankyū (tercer kyū)</h2>
+                    <h2 class="my-5 display-5">Ikkyo (一教)</h2>
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="aqui"></div>
         </main>
+
+        <aside class="container mt-5 mb-2"></aside>
+
         <footer class="container my-1">
             <div class="row">
                 <div class="col">
@@ -91,18 +100,31 @@
                     datos = results.data;
                     console.log(datos);
                     datos.forEach((t) => {
-                        if (t.kyu == 3) {
+                        if (t.taijutsu.includes(" ikkyo")) {
                             seleccion.push(t);
                         }
                     });
                     console.log(seleccion);
                     seleccion.forEach((s) => {
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-3"><div class="card-body"><p class="small m-0 p-0 text-uppercase texto-3">● ${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        if (s.kyu == 5) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-5"><div class="card-body"><p class="small m-0 p-0 text-uppercase texto-5">● ${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 4) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-4"><div class="card-body"><p class="small m-0 p-0 text-uppercase texto-4">● ${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 3) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-3"><div class="card-body"><p class="small m-0 p-0 text-uppercase texto-3">● ${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 2) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-2"><div class="card-body"><p class="small m-0 p-0 text-uppercase texto-2">● ${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm fondo-1"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        }
                     });
                 },
             });
 
             function respuesta(x) {
+                if (x.embeded != null) {
+                    resultado = x.embeded;
+                } else {
                     if (x.disco_tissier != null) {
                         resultado = `<a href="${x.disco_tissier}" target="_blank">Según Tissier</a>`;
                     } else if (x.otro != null) {
@@ -110,8 +132,26 @@
                     } else {
                         resultado = `<span>Lo siento. No tengo video de referencia.</span>`;
                     }
+                }
                 return resultado;
             }
         </script>
+        <script>  
+            let extra = "https://www.youtube.com/embed/WKDX0T6lxGM?si=TYYvgYk91V-buNGk&amp;start=50";
+
+            if (extra !== ""){
+                document.querySelector("aside").innerHTML = `<div class="row pt-4">
+                <div class="col-md-4">
+                    <h3 class="ms-3 mt-2">Extra</h3>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow-sm p-3 border-0 mb-5">
+                        <div class="ratio ratio-16x9"><iframe src="${extra}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>`
+            }
+        </script>
+
     </body>
 </html>

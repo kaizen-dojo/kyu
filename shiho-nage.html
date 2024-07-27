@@ -27,31 +27,37 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle lh-1" href="#" data-bs-toggle="dropdown" aria-expanded="false"><small style="font-variant: small-caps;">katame waza</small><br />inmovilizaciones</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="ikkyo.html">Ikkyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="nikyo.html">Nikyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="sankyo.html">Sankyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="yonkyo.html">Yonkyo</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="gokyo.html">Gokyo</a></li>
-                            </ul>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">PRIMER PILAR</option>
+                            <option value="index.html">Ikkyo</option>
+                            <option value="nikyo.html">Nikyo</option>
+                            <option value="sankyo.html">Sankyo</option>
+                            <option value="yonkyo.html">Yonkyo</option>
+                            <option value="gokyo.html">Gokyo</option>
+                        </select>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle lh-1" href="#" data-bs-toggle="dropdown" aria-expanded="false"><small>nage waza</small><br />proyecciones</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="irimi-nage.html">Irimi nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kaiten-nage.html">Kaiten nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kokyu-nage.html">Kokyu nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="kote-gaeshi.html">Kote gaeshi</a></li>
-                                <li class="dropdown-item"><a class="nav-link active" href="shiho-nage.html">Shiho nage</a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="tenchi-nage.html">Tenchi nage</a></li>
-                            </ul>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">SEGUNDO PILAR</option>
+                            <option value="irimi-nage.html">Irimi Nage</option>
+                            <option value="kaiten-nage.html">Kaiten Nage</option>
+                            <option value="kote-gaeshi.html">Kote Gaeshi</option>
+                            <option value="shijo-nage.html" selected>Shiho Nage</option>
+                            <option value="tenchi-nage.html">Tenchi Nage</option>
+                        </select>
+                        </li>
+                        <li class="nav-item p-1">
+                        <select class="form-select form-select-sm" onchange="location = this.value;">
+                            <option value="#">TERCER PILAR</option>
+                            <option value="kokyu-nage.html">Kokyu Nage</option>
+                        </select>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <main class="container mt-5 mb-2">
             <div class="row">
                 <div class="col-12">
